@@ -30,17 +30,10 @@ function handleScroll() {
     });
 }
 
-// Show notification after delay
-function showNotification() {
-    setTimeout(() => {
-        document.getElementById('notification').classList.add('show');
-    }, 5000);
-}
 
 // Initialize
 window.addEventListener('load', () => {
     handleScroll();
-    showNotification();
     setInterval(updateCountdown, 1000);
 });
 
