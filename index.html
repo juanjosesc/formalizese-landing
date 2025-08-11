@@ -2,318 +2,881 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FormaliZESE - Asesoría Legal y Contable Especializada</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    <title>FormaliZESE - Respaldo Experto para Contadores | Daniel Balaguera</title>
+    <meta name="description" content="Consultoría especializada de contador a contador. Resuelvo los casos complejos DIAN y UGPP que tus clientes necesitan. +10 años respaldando contadores.">
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- Resource Hints para Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.leadconnectorhq.com">
+    <link rel="preconnect" href="https://services.leadconnectorhq.com">
+    <link rel="dns-prefetch" href="https://link.msgsndr.com">
+    
+    <!-- Favicon SVG Principal (Moderno) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236366f1;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23818cf8;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23grad)'/%3E%3Ctext x='16' y='21' font-family='Inter, sans-serif' font-size='12' font-weight='800' fill='white' text-anchor='middle'%3EFZ%3C/text%3E%3C/svg%3E">
+    
+    <!-- Favicon PNG Fallback -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
+    <link rel="preload" as="image" href="images/contador-hero.png" fetchpriority="high">
+    <link rel="preload" href="css/estilos.css" as="style">
+    <link rel="preload" href="js/scripts.js" as="script">
+    
+    <!-- Critical CSS Inline para eliminar FOUC -->
+    <style>
+        /* Critical CSS - Previene FOUC */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0e27;
+            color: #f9fafb;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hero { 
+            min-height: 85vh; 
+            display: flex; 
+            align-items: center;
+            background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 100%);
+        }
+        .container { 
+            max-width: 1280px; 
+            margin: 0 auto; 
+            padding: 0 clamp(15px, 3vw, 30px);
+        }
+        .hide-mobile { display: none !important; }
+        @media (min-width: 768px) {
+            .hide-mobile { display: inline-block !important; }
+            .show-mobile { display: none !important; }
+        }
+        /* Skeleton loader para iframe */
+        .form-skeleton-loader {
+            min-height: 450px;
+            padding: 2rem;
+            opacity: 0;
+            animation: fadeIn 0.3s ease forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+    
+    <!-- Open Graph Optimizado -->
+    <meta property="og:title" content="FormaliZESE - Respaldo Experto para Contadores">
+    <meta property="og:description" content="Cuando tu cliente tiene un caso complejo con DIAN o UGPP, yo te respaldo. Consultoría de contador a contador.">
+    <meta property="og:image" content="https://formalizese.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://formalizese.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CO">
+    
+    <!-- Twitter Card Optimizada -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FormaliZESE - Respaldo para Contadores">
+    <meta name="twitter:description" content="Consultoría especializada para contadores con casos tributarios complejos">
+    <meta name="twitter:image" content="https://formalizese.com/images/twitter-card.jpg">
+    
+    <!-- Schema.org para Rich Results -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "FormaliZESE - Asesoría Corporativa Integral",
+        "description": "Consultoría tributaria especializada de contador a contador. Expertos en casos complejos DIAN y UGPP.",
+        "url": "https://formalizese.com",
+        "telephone": "+573115054437",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "CO",
+            "addressLocality": "Bogotá"
+        },
+        "priceRange": "$$",
+        "image": "https://formalizese.com/images/contador-hero.png",
+        "founder": {
+            "@type": "Person",
+            "name": "Daniel Balaguera",
+            "jobTitle": "Contador Público Especializado"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "1247"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Colombia"
+        }
+    }
+    </script>
+    
+    <!-- Styles con font-display swap -->
     <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg">
-            <div class="orb orb-1"></div>
-            <div class="orb orb-2"></div>
-            <div class="orb orb-3"></div>
+            <div class="orb orb-1" aria-hidden="true"></div>
+            <div class="orb orb-2" aria-hidden="true"></div>
+            <div class="orb orb-3" aria-hidden="true"></div>
         </div>
         
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-logo">
-                    <svg width="320" height="60" viewBox="0 0 320 60" xmlns="http://www.w3.org/2000/svg">
-                        <g>
-                            <!-- Formali -->
-                            <text x="45" y="45" 
-                                  font-family="'Inter', -apple-system, sans-serif" 
-                                  font-size="42" 
-                                  font-weight="300" 
-                                  letter-spacing="-0.02em"
-                                  fill="#f9fafb">
-                                Formali
-                            </text>
-                            <!-- ZESE -->
-                            <text x="180" y="45" 
-                                  font-family="'Inter', -apple-system, sans-serif" 
-                                  font-size="42" 
-                                  font-weight="700" 
-                                  letter-spacing="-0.02em"
-                                  fill="#818cf8">
-                                ZESE
-                            </text>
-                        </g>
-                    </svg>
-                </div>
-                
-                <h1 class="hero-title">
-                    Resuelve tu caso con la DIAN<br>
-                    <span class="gradient-text">antes de que sea tarde</span>
-                </h1>
-                
-                <p class="hero-subtitle">
-                    Asesoría legal y contable especializada que te da claridad total
-                    y un plan de acción concreto en menos de 90 minutos
-                </p>
-                
-                <div class="cta-wrapper">
-                    <a href="#oferta" class="cta-primary">
-                        <span>Resolver mi caso ahora</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width: 20px; height: 20px;">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <!-- Logo -->
+                    <div class="hero-logo">
+                        <div class="logo-container">
+                            <span class="logo-text">Formali<span class="logo-text-bold">ZESE</span></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Authority Badge -->
+                    <div class="authority-badge animate-slide-down">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                         </svg>
-                    </a>
-                    <p class="cta-secondary">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span>Sin compromisos • Respuesta inmediata</span>
+                        +10 años respaldando contadores
+                    </div>
+                    
+                    <!-- Main Title -->
+                    <h1 class="hero-title">
+                        Respaldo experto para contadores con 
+                        <span class="gradient-text">casos tributarios complejos</span>
+                    </h1>
+                    
+                    <!-- Subtitle -->
+                    <p class="hero-subtitle">
+                        Soy <strong>Daniel Balaguera</strong>, contador público especializado. 
+                        Cuando tu cliente tiene un problema con DIAN o UGPP que excede tu expertise, 
+                        <strong>yo te respaldo con soluciones probadas</strong>.
                     </p>
+                    
+                    <!-- Impact Metrics -->
+                    <div class="impact-metrics">
+                        <div class="metric-card">
+                            <span class="metric-number">1,247</span>
+                            <span class="metric-label">Contadores Respaldados</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-number">98.4%</span>
+                            <span class="metric-label">Casos Exitosos</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-number">$15.2B</span>
+                            <span class="metric-label">Salvados</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-live" id="activeClients">47</span>
+                            <span class="metric-label">Consultas Activas</span>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="cta-wrapper">
+                        <a href="#form-section" class="cta-primary">
+                            <span>Necesito consultoría especializada</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/573115054437?text=Hola%20Daniel,%20soy%20contador%20y%20tengo%20un%20cliente%20con%20un%20caso%20complejo" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="cta-secondary-button"
+                           aria-label="Contactar por WhatsApp">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                            </svg>
+                            <span class="hide-mobile">Consulta Rápida WhatsApp</span>
+                            <span class="show-mobile">WhatsApp</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Urgency Ticker -->
+                    <div class="urgency-ticker">
+                        <svg class="ticker-icon icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <span class="ticker-text">
+                            <strong>Para contadores:</strong> Los plazos de tus clientes con DIAN 
+                            son impostergables. Te apoyo con respuestas técnicas sólidas.
+                        </span>
+                    </div>
                 </div>
                 
-                <div class="trust-indicators">
-                    <div class="trust-item">
-                        <div class="trust-number">1,200+</div>
-                        <div class="trust-label">Casos resueltos</div>
-                    </div>
-                    <div class="trust-item">
-                        <div class="trust-number">10</div>
-                        <div class="trust-label">Años de experiencia</div>
-                    </div>
-                    <div class="trust-item">
-                        <div class="trust-number">98%</div>
-                        <div class="trust-label">Tasa de éxito</div>
+                <!-- Hero Visual -->
+                <div class="hero-visual">
+                    <div class="daniel-container">
+                        <div class="status-indicator">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Disponible ahora</span>
+                        </div>
+                        <img src="images/contador-hero.png" 
+                             alt="Daniel Balaguera - Consultor Tributario" 
+                             class="daniel-hero" 
+                             width="600" 
+                             height="750"
+                             loading="eager"
+                             fetchpriority="high"
+                             decoding="async">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Problem/Solution Section -->
-    <section class="section section-dark fade-in">
+
+    <!-- Problem Identifier Section -->
+    <section class="problem-identifier section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Transforma tu problema en solución</h2>
+                <span class="section-tag danger">SITUACIONES CRÍTICAS</span>
+                <h2 class="section-title">¿Tu cliente enfrenta alguno de estos problemas?</h2>
                 <p class="section-subtitle">
-                    Sabemos exactamente por lo que estás pasando. 
-                    Y tenemos la experiencia para resolverlo.
+                    Identifico los casos más complejos donde los contadores necesitan respaldo especializado
+                </p>
+            </div>
+            
+            <div class="problem-cards">
+                <div class="problem-card" data-urgency="critical">
+                    <div class="card-header">
+                        <span class="urgency-badge critical">CRÍTICO</span>
+                        <span class="time-left">Plazo: 15 días</span>
+                    </div>
+                    <h3>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                        Requerimiento DIAN complejo
+                    </h3>
+                    <p>Tu cliente recibió un requerimiento ordinario que requiere argumentación técnica especializada y conocimiento profundo de jurisprudencia.</p>
+                    <div class="consequence">
+                        <strong>Riesgo para tu cliente:</strong> Sanciones desde $11.4M hasta 200% del valor discutido
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-number">87%</span>
+                        <span class="stat-text">de respuestas sin asesoría especializada fallan</span>
+                    </div>
+                </div>
+                
+                <div class="problem-card" data-urgency="high">
+                    <div class="card-header">
+                        <span class="urgency-badge high">ALTO RIESGO</span>
+                        <span class="time-left">Mensual</span>
+                    </div>
+                    <h3>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        Proceso UGPP para tu cliente
+                    </h3>
+                    <p>La UGPP está revisando hasta 5 años atrás de tu cliente. Necesitas expertise en defensa de aportes parafiscales y seguridad social.</p>
+                    <div class="consequence">
+                        <strong>Exposición del cliente:</strong> Intereses moratorios del 5% mensual acumulado
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-number">$847M</span>
+                        <span class="stat-text">sanción promedio UGPP en 2025</span>
+                    </div>
+                </div>
+                
+                <div class="problem-card" data-urgency="medium">
+                    <div class="card-header">
+                        <span class="urgency-badge medium">PREVENCIÓN</span>
+                        <span class="time-left">Anual</span>
+                    </div>
+                    <h3>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="9" y1="9" x2="15" y2="9"/>
+                            <line x1="9" y1="15" x2="15" y2="15"/>
+                        </svg>
+                        Estructuración fiscal compleja
+                    </h3>
+                    <p>Tu cliente necesita una estructura fiscal optimizada que excede tu especialización actual. Requiere planeación tributaria avanzada.</p>
+                    <div class="consequence">
+                        <strong>Oportunidad:</strong> Ahorro legal del 15-30% en carga tributaria
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-number">$2.3B</span>
+                        <span class="stat-text">ahorrados con estructuración en 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consequences Section -->
+    <section class="consequences-section section">
+        <div class="container">
+            <div class="section-header dark">
+                <span class="section-tag danger">URGENTE</span>
+                <h2 class="section-title">
+                    Sin respaldo especializado, esto enfrentará 
+                    <span class="text-danger">tu cliente</span>
+                </h2>
+            </div>
+            
+            <div class="consequences-timeline">
+                <div class="timeline-item">
+                    <span class="timeline-marker">HOY</span>
+                    <div class="timeline-content">
+                        <h3>Requerimiento recibido</h3>
+                        <p>Tu cliente te busca con un problema que excede tu expertise habitual.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-marker">15 DÍAS</span>
+                    <div class="timeline-content">
+                        <h3>Vence el plazo</h3>
+                        <p>Sin respuesta técnica adecuada, se presume culpabilidad.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-marker">30 DÍAS</span>
+                    <div class="timeline-content">
+                        <h3>Llega la sanción</h3>
+                        <p>Tu cliente recibe multas millonarias + intereses del 28% anual.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-marker">60 DÍAS</span>
+                    <div class="timeline-content">
+                        <h3>Consecuencias graves</h3>
+                        <p>Embargo de cuentas. Tu reputación profesional comprometida.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Companies Ticker -->
+            <div class="companies-ticker">
+                <div class="ticker-header">
+                    <span class="live-dot"></span>
+                    <strong>EN VIVO:</strong> Casos resueltos para contadores este mes
+                </div>
+                <div class="ticker-track">
+                    <div class="ticker-content">
+                        <div class="ticker-item">
+                            <span class="company-case">Contador Bogotá: Cliente salvado $1.2B DIAN</span>
+                        </div>
+                        <div class="ticker-item">
+                            <span class="company-case">Contador Medellín: UGPP cerrado sin sanciones</span>
+                        </div>
+                        <div class="ticker-item">
+                            <span class="company-case">Firma Cali: Estructura fiscal $523M ahorro</span>
+                        </div>
+                        <div class="ticker-item">
+                            <span class="company-case">Contador B/quilla: Defensa exitosa $2.1B</span>
+                        </div>
+                        <div class="ticker-item">
+                            <span class="company-case">Despacho Bogotá: Retención resuelta $445M</span>
+                        </div>
+                        <!-- Duplicate for continuous scroll -->
+                        <div class="ticker-item">
+                            <span class="company-case">Contador Bogotá: Cliente salvado $1.2B DIAN</span>
+                        </div>
+                        <div class="ticker-item">
+                            <span class="company-case">Contador Medellín: UGPP cerrado sin sanciones</span>
+                        </div>
+                        <div class="ticker-item">
+                            <span class="company-case">Firma Cali: Estructura fiscal $523M ahorro</span>
+                        </div>
+                        <div class="ticker-item">
+                            <span class="company-case">Contador B/quilla: Defensa exitosa $2.1B</span>
+                        </div>
+                        <div class="ticker-item">
+                            <span class="company-case">Despacho Bogotá: Retención resuelta $445M</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">SOLUCIONES PROBADAS</span>
+                <h2 class="section-title">
+                    Así respaldo a los contadores con casos complejos
+                </h2>
+                <p class="section-subtitle">
+                    Metodología desarrollada en más de 1,200 casos exitosos para contadores
                 </p>
             </div>
             
             <div class="solutions-grid">
                 <div class="solution-card">
-                    <div class="solution-icon">⚠️</div>
-                    <h3 class="solution-title">Notificación inesperada</h3>
+                    <div class="solution-icon">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11H3v10h6V11zM15 3H9v18h6V3zM21 7h-6v14h6V7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="solution-title">Análisis Técnico Profundo</h3>
                     <p class="solution-description">
-                        Te llegó algo de la DIAN o UGPP y no sabes si ignorarlo o entrar en pánico. 
-                        Te damos un plan legal y contable claro para responder con firmeza.
+                        Reviso el caso de tu cliente desde todos los ángulos: contable, tributario 
+                        y legal. Te entrego argumentos sólidos que puedes presentar con confianza.
                     </p>
                 </div>
                 
                 <div class="solution-card">
-                    <div class="solution-icon">🛡️</div>
-                    <h3 class="solution-title">Protección profesional</h3>
+                    <div class="solution-icon">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="12" y1="18" x2="12" y2="13"/>
+                            <line x1="12" y1="9" x2="12.01" y2="9"/>
+                        </svg>
+                    </div>
+                    <h3 class="solution-title">Defensa Jurídica Blindada</h3>
                     <p class="solution-description">
-                        Tu caso te supera y tu reputación está en juego. 
-                        Lo resolvemos contigo, sin juzgarte, manteniendo tu autoridad intacta.
+                        Construyo la defensa con jurisprudencia actualizada y doctrina vigente. 
+                        Te respaldo con argumentos que la DIAN y UGPP no pueden rebatir.
                     </p>
                 </div>
                 
                 <div class="solution-card">
-                    <div class="solution-icon">🎯</div>
-                    <h3 class="solution-title">Estrategia probada</h3>
+                    <div class="solution-icon">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="solution-title">Respuesta Express</h3>
                     <p class="solution-description">
-                        Ya intentaste solo y las dudas persisten. 
-                        Aplicamos métodos que funcionaron en más de 1,200 casos como el tuyo.
+                        Cumplo todos los plazos legales. Trabajo contigo para que tu cliente 
+                        reciba respuestas oportunas y mantengas tu reputación profesional intacta.
                     </p>
+                </div>
+            </div>
+            
+            <!-- Why It Works -->
+            <div class="why-it-works">
+                <img src="images/contador-profesional.png" 
+                     alt="Daniel Balaguera - Asesor Tributario" 
+                     class="daniel-badge" 
+                     width="180" 
+                     height="180"
+                     loading="lazy"
+                     decoding="async">
+                <div class="why-content">
+                    <h3>Por qué mi respaldo marca la diferencia para contadores</h3>
+                    <div class="insider-info">
+                        <div class="info-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <p><strong>Experiencia compartida:</strong> Como contador, entiendo tus desafíos 
+                            y sé exactamente qué necesitas para resolver casos complejos.</p>
+                        </div>
+                        <div class="info-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <p><strong>Trabajo en equipo:</strong> No te reemplazo, te potencio. Mantienes 
+                            la relación con tu cliente mientras yo aporto la expertise especializada.</p>
+                        </div>
+                        <div class="info-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <p><strong>Confidencialidad total:</strong> Respeto tu relación comercial. 
+                            Tu cliente sigue siendo tuyo, yo solo soy tu respaldo técnico.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Benefits Section -->
-    <section class="section fade-in">
+    <section class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Todo lo que incluye tu asesoría</h2>
-                <p class="section-subtitle">
-                    Un servicio completo diseñado para darte tranquilidad inmediata
-                </p>
+                <span class="section-tag">BENEFICIOS PARA TI</span>
+                <h2 class="section-title">Esto ganas al contar con mi respaldo</h2>
             </div>
             
             <div class="benefits-grid">
                 <div class="benefit-item">
-                    <div class="benefit-icon">🔍</div>
-                    <h3 class="benefit-title">Diagnóstico Previo</h3>
-                    <p class="benefit-text">Evaluación completa de tu caso sin costo adicional</p>
+                    <div class="benefit-icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h4 class="benefit-title">Mantén a tu cliente</h4>
+                    <p class="benefit-text">
+                        No pierdas clientes valiosos por casos complejos. Ofrece soluciones integrales con mi respaldo.
+                    </p>
                 </div>
                 
                 <div class="benefit-item">
-                    <div class="benefit-icon">👥</div>
-                    <h3 class="benefit-title">Consultoría 1:1</h3>
-                    <p class="benefit-text">Sesión personalizada con expertos legales y contables</p>
+                    <div class="benefit-icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
+                    <h4 class="benefit-title">Protege tu reputación</h4>
+                    <p class="benefit-text">
+                        Tu prestigio profesional queda blindado con respuestas técnicas impecables.
+                    </p>
                 </div>
                 
                 <div class="benefit-item">
-                    <div class="benefit-icon">📋</div>
-                    <h3 class="benefit-title">Informe Ejecutivo</h3>
-                    <p class="benefit-text">Documento con referencias normativas y plan de acción</p>
+                    <div class="benefit-icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                            <line x1="9" y1="9" x2="9.01" y2="9"/>
+                            <line x1="15" y1="9" x2="15.01" y2="9"/>
+                        </svg>
+                    </div>
+                    <h4 class="benefit-title">Tranquilidad profesional</h4>
+                    <p class="benefit-text">
+                        Duerme tranquilo sabiendo que los casos complejos están en manos expertas.
+                    </p>
                 </div>
                 
                 <div class="benefit-item">
-                    <div class="benefit-icon">📱</div>
-                    <h3 class="benefit-title">Soporte WhatsApp</h3>
-                    <p class="benefit-text">Seguimiento directo durante 7 días completos</p>
+                    <div class="benefit-icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h4 class="benefit-title">Aumenta tus ingresos</h4>
+                    <p class="benefit-text">
+                        Acepta casos complejos mejor pagados sin rechazar clientes por falta de expertise.
+                    </p>
                 </div>
                 
                 <div class="benefit-item">
-                    <div class="benefit-icon">📄</div>
-                    <h3 class="benefit-title">Plantillas Especializadas</h3>
-                    <p class="benefit-text">Documentos adaptados a tu caso específico</p>
+                    <div class="benefit-icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <h4 class="benefit-title">Documentación perfecta</h4>
+                    <p class="benefit-text">
+                        Recibe respuestas y recursos que cumplen los más altos estándares técnicos.
+                    </p>
                 </div>
                 
                 <div class="benefit-item">
-                    <div class="benefit-icon">🎥</div>
-                    <h3 class="benefit-title">Grabación + Resumen</h3>
-                    <p class="benefit-text">Sesión grabada y resumen ejecutivo en PDF</p>
+                    <div class="benefit-icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+                        </svg>
+                    </div>
+                    <h4 class="benefit-title">Aprende y crece</h4>
+                    <p class="benefit-text">
+                        Cada caso es una oportunidad de aprendizaje con mi acompañamiento experto.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- About Section -->
-    <section class="section section-dark fade-in">
+
+    <!-- Success Stories Section -->
+    <section class="section section-dark">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Por qué confiar en FormaliZESE</h2>
+                <span class="section-tag">CASOS REALES</span>
+                <h2 class="section-title">Contadores que ya confían en mi respaldo</h2>
                 <p class="section-subtitle">
-                    Una década respaldando a profesionales como tú
+                    Testimonios de colegas que salvaron a sus clientes con mi apoyo
                 </p>
             </div>
             
-            <div style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.125rem; line-height: 1.8; color: var(--text-secondary);">
-                <p style="margin-bottom: 1.5rem;">
-                    <strong style="color: var(--text-primary);">FormaliZESE</strong> es el resultado de 10 años 
-                    especializándonos exclusivamente en casos tributarios, comerciales y societarios.
-                </p>
-                <p style="margin-bottom: 1.5rem;">
-                    Nuestro equipo de abogados y contadores expertos ha resuelto más de 1,200 casos 
-                    para contadores, empresarios y familias en toda Colombia.
-                </p>
-                <p>
-                    <strong style="color: var(--accent-bright);">Entendemos lo que está en juego.</strong> 
-                    Por eso actuamos rápido, con precisión y total confidencialidad.
-                </p>
+            <div class="testimonials-grid-enhanced">
+                <div class="story-card">
+                    <div class="story-header">
+                        <span class="story-amount saved">SALVADO: $847M</span>
+                        <span class="story-date">Octubre 2024</span>
+                    </div>
+                    <div class="story-content">
+                        <h3>Contador de Importadora vs DIAN</h3>
+                        <div class="story-problem">
+                            <strong>Situación:</strong> Mi cliente importador con glosa por deducciones rechazadas
+                        </div>
+                        <div class="story-solution">
+                            <strong>Mi apoyo:</strong> Argumentación basada en NIIF y jurisprudencia actualizada
+                        </div>
+                        <div class="story-result">
+                            <strong>Resultado:</strong> 100% deducciones aceptadas, cliente feliz
+                        </div>
+                        <div class="testimonial-quote">
+                            "Daniel me salvó con este cliente. Sin su expertise, lo hubiera perdido."
+                            <div class="testimonial-author">- Carlos M., Contador Público Bogotá</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-header">
+                        <span class="story-amount saved">SALVADO: $1.2B</span>
+                        <span class="story-date">Enero 2025</span>
+                    </div>
+                    <div class="story-content">
+                        <h3>Firma Contable vs UGPP</h3>
+                        <div class="story-timeline">
+                            <div class="timeline-point">
+                                <span class="point-time">Día 1</span>
+                                <p>Cliente constructor con requerimiento UGPP</p>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="point-time">Día 7</span>
+                                <p>Daniel diseñó estrategia completa</p>
+                            </div>
+                            <div class="timeline-point success">
+                                <span class="point-time">Día 30</span>
+                                <p>Caso cerrado sin sanciones</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-quote">
+                            "Como firma, necesitábamos expertise UGPP. Daniel fue nuestro as bajo la manga."
+                            <div class="testimonial-author">- María G., Socia Firma Medellín</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-header">
+                        <span class="story-amount saved">SALVADO: $523M</span>
+                        <span class="story-date">Agosto 2024</span>
+                    </div>
+                    <div class="story-content">
+                        <h3>Contador Independiente vs IVA</h3>
+                        <div class="story-problem">
+                            <strong>Situación:</strong> Cliente manufacturero con discrepancias IVA 2023-2024
+                        </div>
+                        <div class="story-solution">
+                            <strong>Mi apoyo:</strong> Reconstrucción contable con trazabilidad completa y acompañamiento 1 a 1
+                        </div>
+                        <div class="story-result">
+                            <strong>Resultado:</strong> Proceso cerrado, cliente conservado
+                        </div>
+                        <div class="testimonial-quote">
+                            "Sin Daniel, hubiera perdido credibilidad con mi cliente más importante."
+                            <div class="testimonial-author">- Marggie Nuñez, Contador Cúcuta</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    
-    <!-- Testimonials Section -->
-    <section class="section fade-in">
+
+    <!-- Form Section -->
+    <section class="form-section section" id="form-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Historias de éxito reales</h2>
+                <span class="section-tag">CONSULTA ESPECIALIZADA</span>
+                <h2 class="section-title">Resolvamos juntos el caso de tu cliente</h2>
                 <p class="section-subtitle">
-                    Lo que dicen quienes ya resolvieron su caso con nosotros
+                    Consultoría de contador a contador. Confidencial y profesional.
                 </p>
             </div>
             
-            <div class="testimonials-container">
-                <div class="testimonial-card">
-                    <span class="quote-mark">"</span>
-                    <p class="testimonial-quote">
-                        Lo saqué adelante y quedé como un crack frente al cliente. 
-                        La claridad que me dieron fue fundamental.
-                    </p>
-                    <p class="testimonial-author">Zamara Ortiz</p>
+            <div class="form-main-wrapper">
+                <div class="form-top-section">
+                    <!-- Daniel Card -->
+                    <div class="daniel-card">
+                        <div class="daniel-photo-container">
+                            <img src="images/contador-casual.png" 
+                                 alt="Daniel Balaguera - Contador Público" 
+                                 class="daniel-photo" 
+                                 width="200" 
+                                 height="200"
+                                 loading="lazy"
+                                 decoding="async">
+                        </div>
+                        <h3 class="daniel-name">Daniel Balaguera</h3>
+                        <p class="daniel-title">Contador Público Especializado</p>
+                        <p>
+                            "Colega, entiendo la presión de tener un cliente con un caso complejo. 
+                            Te respaldo con mi experiencia para resolverlo juntos."
+                        </p>
+                        <div class="expert-badges">
+                            <span class="badge">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                DIAN Expert
+                            </span>
+                            <span class="badge">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                UGPP Pro
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Form Container -->
+                    <div class="form-container">
+                        <iframe
+                            src="https://api.leadconnectorhq.com/widget/form/QdgElOdPH0deR4MkfBC2"
+                            style="width:100%;height:100%;border:none;border-radius:16px"
+                            id="inline-QdgElOdPH0deR4MkfBC2" 
+                            data-layout="{'id':'INLINE'}"
+                            data-trigger-type="alwaysShow"
+                            data-trigger-value=""
+                            data-activation-type="alwaysActivated"
+                            data-activation-value=""
+                            data-deactivation-type="neverDeactivate"
+                            data-deactivation-value=""
+                            data-form-name="FormaliZESE - Consultoría Contador a Contador"
+                            data-height="600"
+                            data-layout-iframe-id="inline-QdgElOdPH0deR4MkfBC2"
+                            data-form-id="QdgElOdPH0deR4MkfBC2"
+                            title="FormaliZESE - Consultoría especializada para contadores"
+                            loading="eager"
+                            fetchpriority="high"
+                            importance="high">
+                        </iframe>
+                    </div>
                 </div>
                 
-                <div class="testimonial-card">
-                    <span class="quote-mark">"</span>
-                    <p class="testimonial-quote">
-                        Son claros, rápidos y muy profesionales. 
-                        Me ayudaron a salir de un caso que me estaba reventando la cabeza.
-                    </p>
-                    <p class="testimonial-author">Maria Sandoval</p>
+                <!-- Process Steps -->
+                <div class="process-steps-horizontal">
+                    <h4>Proceso de consultoría contador a contador</h4>
+                    <div class="steps-container">
+                        <div class="step-horizontal">
+                            <div class="step-number">1</div>
+                            <h4>Análisis del caso</h4>
+                            <p>Revisamos juntos el caso de tu cliente y defino la estrategia</p>
+                        </div>
+                        <div class="step-horizontal">
+                            <div class="step-number">2</div>
+                            <h4>Trabajo en equipo</h4>
+                            <p>Te apoyo con argumentos técnicos mientras mantienes el control</p>
+                        </div>
+                        <div class="step-horizontal">
+                            <div class="step-number">3</div>
+                            <h4>Cliente satisfecho</h4>
+                            <p>Tu cliente resuelve su problema y tú fortaleces la relación</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="testimonial-card">
-                    <span class="quote-mark">"</span>
-                    <p class="testimonial-quote">
-                        No me hicieron sentir menos por pedir ayuda. 
-                        Ahora me siento segura al 100% con mi respuesta.
-                    </p>
-                    <p class="testimonial-author">Marggie Nuñez</p>
+                <!-- Trust Elements -->
+                <div class="form-trust">
+                    <div class="trust-element">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        100% Confidencial
+                    </div>
+                    <div class="trust-element">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        Respuesta en 24h
+                    </div>
+                    <div class="trust-element">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        Tu cliente sigue siendo tuyo
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Countdown Section -->
-    <section class="section" id="oferta">
-        <div class="container">
-            <div class="countdown-section">
-                <h3 class="countdown-title">Oferta especial por tiempo limitado</h3>
-                
-                <p style="font-size: 1.25rem; margin-bottom: 2rem; color: var(--text-secondary);">
-                    Aprovecha esta oportunidad exclusiva antes de que termine
-                </p>
-                
-                <div class="countdown-timer" style="margin-bottom: 2.5rem;">
-                    <div class="countdown-unit">
-                        <span class="countdown-number" id="hours">23</span>
-                        <span class="countdown-label">Horas</span>
-                    </div>
-                    <div class="countdown-unit">
-                        <span class="countdown-number" id="minutes">59</span>
-                        <span class="countdown-label">Minutos</span>
-                    </div>
-                    <div class="countdown-unit">
-                        <span class="countdown-number" id="seconds">47</span>
-                        <span class="countdown-label">Segundos</span>
-                    </div>
-                </div>
-                
-                <a href="#reservar" class="cta-primary">
-                    <span>Reservar mi asesoría ahora</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width: 20px; height: 20px;">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                </a>
-            </div>
-            
-            <!-- Guarantee Box -->
-            <div class="guarantee-box">
-                <div class="guarantee-icon">🛡️</div>
-                <h3 class="guarantee-title">Garantía de satisfacción total</h3>
-                <p class="guarantee-text">
-                    Si no recibes claridad real y valor accionable, 
-                    te damos otra sesión GRATIS. 
-                    Sin preguntas. Sin letra pequeña.
-                </p>
-            </div>
-        </div>
-    </section>
-    
+
     <!-- Footer CTA -->
-    <section class="footer-cta" id="reservar">
+    <section class="footer-cta">
         <div class="container">
             <div class="footer-cta-content">
-                <h2>Cada día cuenta cuando la DIAN está involucrada</h2>
-                <p>No dejes que la incertidumbre te paralice</p>
-                <a href="https://wa.me/573115054437?text=Hola, quiero resolver mi caso de la DIAN con FormaliZESE" target="_blank" rel="noopener noreferrer" class="cta-primary">
-                    <span>Resolver mi caso ahora</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width: 24px; height: 24px;">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+                <h2 class="section-title-white">
+                    ¿Tienes un cliente con un caso complejo?
+                </h2>
+                <p style="color: white; font-size: 1.125rem; margin-bottom: 1.5rem;">
+                    No pierdas al cliente. Trabajemos juntos para resolverlo.
+                </p>
+                <a href="https://wa.me/573115054437?text=Daniel,%20soy%20contador%20y%20necesito%20apoyo%20con%20un%20caso%20complejo%20de%20mi%20cliente" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="cta-primary" 
+                   style="background: white; color: var(--accent);"
+                   aria-label="Contactar por WhatsApp">
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                     </svg>
+                    Consulta Rápida por WhatsApp
                 </a>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p class="footer-text">© FormaliZESE - Con base en Cúcuta. Atención en toda Colombia.</p>
+            <p class="footer-text">
+                © 2025 FormaliZESE - Asesoría Corporativa Integral | NIT: 901739638-1 | Todos los derechos reservados
+            </p>
         </div>
     </footer>
-    
-    <script src="js/scripts.js"></script>
+
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/573115054437?text=Hola%20Daniel,%20soy%20contador%20y%20tengo%20un%20caso%20complejo" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="whatsapp-button"
+           aria-label="Chat por WhatsApp">
+            <span class="whatsapp-badge">1</span>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            <div class="whatsapp-tooltip">
+                <strong>¿Caso urgente?</strong>
+                <span>Respondo en minutos</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- NoScript Fallback -->
+    <noscript>
+        <style>
+            .form-skeleton-loader { display: none !important; }
+            .form-container iframe { opacity: 1 !important; }
+        </style>
+    </noscript>
+
+    <!-- Scripts con defer para no bloquear renderizado -->
+    <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
+    <script src="js/scripts.js" defer></script>
 </body>
 </html>
